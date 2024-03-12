@@ -23,8 +23,9 @@ const { getUserAnswer, extractQuestion } =
 //////////////////////////////
 
 const providerKey = process.env.ALCHEMY_KEY;
+console.log("test:", providerKey);
 const sepoliaUrl = `${process.env.ALCHEMY_SEPOLIA_API_URL}${providerKey}`;
-// console.log(sepoliaUrl);
+console.log(sepoliaUrl);
 const sepoliaProvider = new ethers.JsonRpcProvider(sepoliaUrl);
 
 const signer = new ethers.Wallet(
@@ -45,7 +46,7 @@ async function main() {
     // Hint: method `askQuestion()`
 
     // Your code here.
-
+    askQuestion();   
     // From the transaction receipt we can extract useful information, such as
     // as the question's text and id that were stored in the logs
     // (we will understand logs in detail later in the course).
